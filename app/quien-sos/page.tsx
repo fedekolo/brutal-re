@@ -1,6 +1,6 @@
 "use client"
 import { GeistMono } from "geist/font/mono"
-import { useActionState } from "react"
+import { useFormState } from "react-dom"
 import { useFormStatus } from "react-dom"
 import { submitContactForm } from "./actions"
 import Link from "next/link"
@@ -28,7 +28,7 @@ function SubmitButton() {
 
 export default function QuienSosPage() {
   const initialState = { message: null, error: null }
-  const [state, dispatch] = useActionState(submitContactForm, initialState)
+  const [state, dispatch] = useFormState(submitContactForm, initialState)
 
   return (
     <main
